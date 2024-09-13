@@ -6,6 +6,8 @@ const cors = require("cors");
 
 app.use(cors());
 
+app.use("/", router); // add router in the Express app.
+
 app.listen(PORT, () => {
   console.log("Esta corriendo machin perro en el 3k");
 });
