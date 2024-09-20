@@ -15,22 +15,30 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>Description: ${elemento.description}</p>
         <p>DueDate: ${elemento.dueDate}</p>
         <p>Priority: ${elemento.priority}</p>
-       `;
+        `;
       list.appendChild(tarea);
+    });
+}); 
+    document.getElementById("algoperro").addEventListener("click", (e) => {
+    e.preventDefault();
+    const title = document.getElementById("title").value;
+    const description = document.getElementById("description").value;
+    const dueDate = document.getElementById("dueDate").value;
+    const priority = document.getElementById("priority").value;
+
+    let hardTask = {
+      title: title,
+      description: description,
+      dueDate: dueDate,
+      priority: priority,
+    };
+    console.log(hardTask);
+    fetch("http://localhost:3000/list").then(async (res) => {
+      if (!res.ok) {
+        console.log("error en la respuesta, odio a cetys");
+        return;
+      }
     });
   });
 });
 
-document.getElementById("algoperro").addEventListener(click, () => {
-  const title = document.getElementById("title").value;
-  const description = document.getElementById("description").value;
-  const dueDate = document.getElementById("dueDate").value;
-  const priority = document.getElementById("priority").value;
-  console.log(title);
-  fetch("http://localhost:3000/list").then(async (res) => {
-    if (!res.ok) {
-      console.log("error en la respuesta, odio a cetys");
-      return;
-    }
-  });
-});
