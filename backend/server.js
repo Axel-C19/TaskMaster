@@ -11,7 +11,7 @@ app.use("/", router); // add router in the Express app.
 app.listen(PORT, () => {
   console.log("Esta corriendo machin perro en el 3k");
 });
-
+let hardArray = [];
 router.get("/list", async (req, res) => {
   try {
     let hardTask1 = {
@@ -26,15 +26,17 @@ router.get("/list", async (req, res) => {
       dueDate: "mm/dd/aaaa",
       priority: "en FA papito",
     };
-    let hardArray = [hardTask1, hardTask2];
+    hardArray = [hardTask1, hardTask2];
     res.json(hardArray);
   } catch (error) {
     console.log("Matricula 666 en CETYS *emoji de diablo*");
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
+    elemento = JSON.parse(req);
+    hardArray.push(elemento);
   } catch (error) {
     console.log("Matricula 666 en CETYS *emoji de diablo*");
   }

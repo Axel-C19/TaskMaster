@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <href rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
     <title>Task_Manager</title>
   </head>
@@ -13,11 +13,20 @@
 
       <p>Manage your tasks with ease</p>
       <form id="tasks">
-        <input type="text" id="title" />
-        <input type="text" id="description" />
-        <input type="text" id="dueDate" />
-        <input type="text" id="priority" />
-        <button class="CrearTarea">Crear Tarea</button>
+        <label>Titulo</label>
+        <input type="text" id="title" placeholder="Titulo" required />
+        <label>Descripción</label>
+        <input type="text" id="description" placeholder="Descripcion" />
+        <label>Para cuando</label>
+        <input type="date" id="dueDate" placeholder="dueDate" required />
+        <label>Prioridad</label>
+        <select id="x" placeholder="#" required>
+          <option>Selecciona la prioridad</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+        <button id="algoperro" class="CrearTarea">Crear Tarea</button>
       </form>
       <ul id="list"></ul>
     </div>
